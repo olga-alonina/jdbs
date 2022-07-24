@@ -29,6 +29,7 @@ public class TestOracleConnection {
 
         ResultSet rs = statement.executeQuery("select * from regions");
 
+
         /*
 
         How to run query?
@@ -39,7 +40,8 @@ public class TestOracleConnection {
          */
 
         //next() --> move to cursor in next line
-        rs.next();
+        //true if the new current row is valid; false if there are no more rows
+        //rs.next();
 
         /*
          getInt( index ) will return Int if we have Int value in that column
@@ -49,9 +51,38 @@ public class TestOracleConnection {
 
          */
         // 1
-        System.out.println(rs.getInt(1));
-        System.out.println(rs.getInt("REGION_ID"));
+        //System.out.println(rs.getInt(1));
+        //System.out.println(rs.getInt("REGION_ID"));
 
+        // get me region name
+        //System.out.println(rs.getString(2));
+        //System.out.println(rs.getString("REGION_NAME"));
+
+
+        //move to the 2 row
+        //rs.next();
+
+        // 2 - Americas
+        //System.out.println(rs.getInt("REGION_ID")+" - "+rs.getString("REGION_NAME"));
+
+        //move to the 3 row
+        //rs.next();
+
+        // 3 - Asia
+        //System.out.println(rs.getInt("REGION_ID")+" - "+rs.getString("REGION_NAME"));
+
+        //move to the 4 row
+        //rs.next();
+
+        // 4 - Middle East and Africa
+        //System.out.println(rs.getInt("REGION_ID")+" - "+rs.getString("REGION_NAME"));
+
+
+
+
+        while(rs.next()){
+            System.out.println(rs.getInt("REGION_ID")+" - "+rs.getString("REGION_NAME"));
+        }
 
 
     }
