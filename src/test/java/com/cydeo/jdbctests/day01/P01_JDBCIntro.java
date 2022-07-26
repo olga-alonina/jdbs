@@ -23,6 +23,28 @@ public class P01_JDBCIntro {
         // rs is just a variable/object name
         ResultSet rs = statement.executeQuery("select * from departments where manager_id is not null");
 
+        // 10-Administration-200-1700
+
+        // getting each row dynamicly
+        while(rs.next()){
+
+            System.out.println(rs.getInt(1)+"-"+rs.getString(2)+"-"+rs.getInt(3)+"-"+rs.getInt(4));
+        }
+
+        /*
+        Can we use more than one query in one connection to get data ?
+        YES
+         */
+
+         rs=statement.executeQuery("select * from REGIONS");
+
+        //1-Europe
+        //2-Americas
+
+        while(rs.next()){
+            System.out.println(rs.getInt(1)+"-"+rs.getString(2));
+            //System.out.println(rs.getInt("region_id")+"-"+rs.getString("region_name"));
+        }
 
 
 
