@@ -44,6 +44,7 @@ public class P01_JDBCIntro {
         while(rs.next()){
             System.out.println(rs.getInt(1)+"-"+rs.getString(2));
             //System.out.println(rs.getInt("region_id")+"-"+rs.getString("region_name"));
+
         }
 
 
