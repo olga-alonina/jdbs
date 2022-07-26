@@ -85,5 +85,10 @@ public class TestOracleConnection {
         }
 
 
+        //close conn
+        rs.close();
+        statement.close();
+        conn.close();
+
     }
 }
