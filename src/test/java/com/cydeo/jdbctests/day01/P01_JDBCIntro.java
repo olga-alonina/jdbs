@@ -21,7 +21,7 @@ public class P01_JDBCIntro {
 
         // ResutSet stores data that we get from after query execution
         // rs is just a variable/object name
-        ResultSet rs = statement.executeQuery("select * from regions");
+        ResultSet rs = statement.executeQuery("select * from departments where manager_id is not null");
 
 
 
