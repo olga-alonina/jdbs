@@ -158,4 +158,6 @@ group by REGION_NAME
 having count(*)>5
 order by 2;
 
+select FIRST_NAME,LAST_NAME,salary from employees;
+
 
