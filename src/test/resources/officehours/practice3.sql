@@ -2,11 +2,51 @@
 -- 1. FIND OUT COUNTRY NAME AND REGION NAME FROM COUNTRIES AND REGION TABLE
 select * from employees;
 
+select COUNTRY_NAME,REGION_NAME from COUNTRIES c inner join REGIONS r
+        on c.REGION_ID = r.REGION_ID;
+
+    --how many countries we have for each region
+     select REGION_NAME,count(*) from COUNTRIES c inner join REGIONS r
+                                                            on c.REGION_ID = r.REGION_ID
+    group by REGION_NAME;
+
 -- 2. FIND OUT FIRST_NAME AND JOB_TITLE FROM JOBS AND EMPLOYEES TABLE
+    select FIRST_NAME,JOB_TITLE from EMPLOYEES e inner join JOBS j
+        on e.JOB_ID = j.JOB_ID;
+
+    -- How many emmployee we have for each job title
+    select JOB_TITLE,count(*) from EMPLOYEES e inner join JOBS j
+                                                        on e.JOB_ID = j.JOB_ID
+    group by JOB_TITLE;
+
+    -- Display jobtitle that has more than 5 employee
+    select JOB_TITLE,count(*) from EMPLOYEES e inner join JOBS j
+                                                          on e.JOB_ID = j.JOB_ID
+    group by JOB_TITLE
+    having count(*)>5;
+
 
 -- 3. FIND OUT DEPARTMENT_NAME AND CITY
+     select * from DEPARTMENTS d inner join LOCATIONS l
+        on d.LOCATION_ID = l.LOCATION_ID;
+
+    -- give same result without manager id null
+    select * from DEPARTMENTS d inner join LOCATIONS l
+                                       on d.LOCATION_ID = l.LOCATION_ID
+    where MANAGER_ID is not null;
+
+
+    -- how many department we have in each location
+    select d.LOCATION_ID,count(*) from DEPARTMENTS d inner join LOCATIONS l
+                                           on d.LOCATION_ID = l.LOCATION_ID
+    where MANAGER_ID is not null
+    group by d.LOCATION_ID;
+
 
 -- 4. FIND OUT ALL CITIES  AND COUNTRY NAMES
+
+
+
 
 -- 5. FIND OUT FIRST_NAME, LAST NAME, DEPARTMENT ID , DEPARTMENT NAME  FOR      DEPARTMENT ID 80 OR 40
 
