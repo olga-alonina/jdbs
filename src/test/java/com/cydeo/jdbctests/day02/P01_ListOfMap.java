@@ -97,6 +97,11 @@ public class P01_ListOfMap {
         // Give me last name of Steven
         System.out.println(dataList.get(0).get(rsmd.getColumnName(2)));
 
+        // PRINT MAPS FROM THE LIST
+        System.out.println("===== PRINT MAPS FROM THE LIST =====");
+        for (Map<String, Object> eachRowMap : dataList) {
+            System.out.println(eachRowMap);
+        }
 
         //close conn
         rs.close();
