@@ -103,6 +103,7 @@ public class P01_ListOfMap {
             System.out.println(eachRowMap);
         }
 
+
         //close conn
         rs.close();
         statement.close();
