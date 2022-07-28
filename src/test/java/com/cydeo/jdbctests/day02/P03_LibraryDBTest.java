@@ -25,16 +25,12 @@ public class P03_LibraryDBTest {
         String expectedCount = DB_Util.getCellValue(1, 1);
 
         // get How many user we have from UI
-
         /*
 
         we need to implement UI steps to get data from UI manually
 
          */
-
         String actualCount="267";
-
-
 
         // Make an assertion
         Assertions.assertEquals(expectedCount,actualCount);
@@ -42,6 +38,36 @@ public class P03_LibraryDBTest {
         // Close conn
 
         DB_Util.destroy();
+
+    }
+
+    @Test
+    public void testBookCount() {
+
+        // Create Conn
+           DB_Util.createConnection(url,username,password);
+        // Run Query
+           DB_Util.runQuery("select count(*) from books ");
+
+           // Get how many books have from DB
+        String expectedBookCount = DB_Util.getFirstRowFirstColumn();
+
+        // Get how many book we have from UI
+        /*
+
+        we need to implement UI steps to get data from UI manually
+
+         */
+        String actualBookCount="1405";
+
+        // Make an assertion
+        Assertions.assertEquals(expectedBookCount,actualBookCount);
+        // Close Conn
+        DB_Util.destroy();
+
+
+
+
 
     }
 }
