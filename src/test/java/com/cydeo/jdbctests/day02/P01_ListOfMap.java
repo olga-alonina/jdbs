@@ -124,7 +124,23 @@ public class P01_ListOfMap {
         ResultSetMetaData rsmd = rs.getMetaData();
 
 
+        List<Map<String,Object>> dataList=new ArrayList<>();
 
+        // iteerate each row dynamicly
+        while(rs.next()){
+
+            Map<String,Object> rowMap=new HashMap<>();
+
+            // fill this Map dynamicly
+            for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+                rowMap.put(rsmd.getColumnName(i),rs.getString(i) );
+            }
+
+            //add this ready map into List
+
+            dataList.add(rowMap);
+
+        }
 
 
 
