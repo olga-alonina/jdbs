@@ -109,4 +109,29 @@ public class P01_ListOfMap {
         statement.close();
         conn.close();
     }
+
+    @Test
+    public void task3() throws SQLException {
+        // DriverManager class getConneciton is used for to make connection with database
+        Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+
+        // Statemet helps us to execute Query
+        Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+
+        // ResutSet stores data that we get from after query execution
+        // rs is just a variable/object name
+        ResultSet rs = statement.executeQuery("select first_name,last_name,salary from employees where rownum<6" );
+        ResultSetMetaData rsmd = rs.getMetaData();
+
+
+
+
+
+
+
+        //close conn
+        rs.close();
+        statement.close();
+        conn.close();
+    }
 }
