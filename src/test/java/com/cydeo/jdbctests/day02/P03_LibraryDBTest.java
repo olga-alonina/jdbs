@@ -30,7 +30,7 @@ public class P03_LibraryDBTest {
         we need to implement UI steps to get data from UI manually
 
          */
-        String actualCount="267";
+        String actualCount="280";
 
         // Make an assertion
         Assertions.assertEquals(expectedCount,actualCount);
@@ -58,7 +58,7 @@ public class P03_LibraryDBTest {
         we need to implement UI steps to get data from UI manually
 
          */
-        String actualBookCount="1405";
+        String actualBookCount="1420";
 
         // Make an assertion
         Assertions.assertEquals(expectedBookCount,actualBookCount);
