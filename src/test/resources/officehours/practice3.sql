@@ -122,4 +122,4 @@ select DEPARTMENT_NAME  , l.LOCATION_ID ,COUNTRY_ID from DEPARTMENTS d
     select FIRST_NAME, d.DEPARTMENT_ID,DEPARTMENT_NAME from EMPLOYEES e
         full join DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
 
-
+select count(*) from employees;
